@@ -6,6 +6,22 @@ body {
     display: flex;
     flex-direction: column;
 }
+#tabla_background {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  z-index:1;
+  display: block;
+  left: 0px;
+  right: 0px;
+  width:100%
+  height: 50%;
+  background: white;
+  position:fixed;
+
+}
 table {
     display: flex;
     flex-direction: row;
@@ -17,14 +33,17 @@ table {
     font-weight: 200px;
     /*max width cambia el ancho de la letra*/
     max-width: 100%;
-    position: absolute;
+    /*position absolute*/
+    position: fixed;
     left: 0;
     top: 00px;
     width: 100%;
     text-align: center;
+    z-index: 999;
+
 }
 tr {
-    border: white, 5px, solid;
+    border: white, 1px, solid;
 }
 td {
     padding: 10px 20px 10px 20px;
@@ -39,10 +58,9 @@ a:hover {
     background-color: white ;
     color: black;
 }
-
 #videncabezado {
     position: relative;
-    
+
 }
 #titulo1 {
     position: absolute;
@@ -51,7 +69,7 @@ a:hover {
     width: 100%;
     color: white;
     text-align: center;
-    
+
 }
 h1 {
     font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -88,18 +106,31 @@ h2 {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     color: black;
     font-size: 60px;
-    font-weight: 300; 
+    font-weight: 300;
     text-shadow: black 2px 3px 15px;
     padding-left: 30px;
     padding-top: 50px;
     float: left;
 }
+@keyframes crecer {
+  100%{height: 140px;width: auto;}
+}
+@keyframes crecer2 {
+  100%{height: 130px;width: 220px;}
+}
+@keyframes brillo {
+  100%{box-shadow: 0 12px 16px 0 rgba(255,255,255,0.3), 0 17px 50px 0 rgba(255,255,255,0.9);}
+}
 #musica {
     background-color: #E53935;
 }
 audio {
-    padding: 15px 15px 15px 15px;
+    padding: 15px 15px 20px 15px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+audio:hover {
+  animation-name: "brillo";
+  animation-duration:1s;
 }
 #audios {
     position: relative;
@@ -112,7 +143,7 @@ audio {
     background-color: #AB47BC;
 }
 #imagenes2 {
-    width: 50%;
+    width: 60%;
     padding-left: 40%;
     padding-bottom: 40px;
     padding-top: 60px;
@@ -127,12 +158,17 @@ audio {
     border: solid, 65px, white;
     padding: 10px 10px 10px 10px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+#imagenes2 img:hover {
+  animation-name: "crecer";
+  animation-duration:1s;
 }
 #videos {
     background-color: #42A5F5;
 }
 #videos2 {
-    width: 50%;
+    width: 60%;
     padding-left: 40%;
     padding-bottom: 40px;
     padding-top: 60px;
@@ -141,10 +177,14 @@ audio {
     display: flex;
     flex-direction: row;
 }
-#videos2 video {
+#videos2 iframe {
     height: 100px;
     padding: 10px 10px 10px 10px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#videos2 iframe:hover {
+  animation-name: "crecer2";
+  animation-duration:1s;
 }
 table {
     float: right;
@@ -154,7 +194,7 @@ table {
     background-color: #4CAF50;
 }
 #yoga2 {
-    width: 50%;
+    width: 60%;
     padding-left: 40%;
     padding-bottom: 40px;
     padding-top: 60px;
@@ -169,6 +209,10 @@ table {
     border: solid, 65px, white;
     padding: 10px 10px 10px 10px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#yoga2 img:hover {
+  animation-name: "crecer";
+  animation-duration:1s;
 }
 /*footer*/
 footer {
